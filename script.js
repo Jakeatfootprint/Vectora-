@@ -63,6 +63,13 @@
     frame.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
     shell.appendChild(frame);
     fallback.hidden = true;
+
+    var alt = document.getElementById("intake-alt");
+    var open = document.getElementById("intake-open");
+    if (alt && open) {
+      open.href = GOOGLE_FORM_URL;
+      alt.hidden = false;
+    }
   }
 
   function wireResumeButton() {
