@@ -10,13 +10,8 @@
    *   https://docs.google.com/forms/d/e/1FAIpQLSd.../viewform?embedded=true
    *   Must be a docs.google.com/forms/... /viewform link (not /edit, not a
    *   forms.gle short link). Leave empty to show the "opens shortly" notice.
-   *
-   * RESUME_PROJECT_URL — where the header "Resume project" button goes
-   *   (client portal, status form, etc.). Leave empty to keep it pointing
-   *   at the intake section.
    * ---------------------------------------------------------------- */
   var GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeM2jYyTttmxVGzeU533OvmUYPOI4dtza57rzyWyxT1ebAHEA/viewform";
-  var RESUME_PROJECT_URL = "";
 
   function isGoogleFormUrl(value) {
     try {
@@ -27,14 +22,6 @@
         url.pathname.indexOf("/forms/") === 0 &&
         /\/viewform$/.test(url.pathname)
       );
-    } catch (err) {
-      return false;
-    }
-  }
-
-  function isHttpsUrl(value) {
-    try {
-      return new URL(value).protocol === "https:";
     } catch (err) {
       return false;
     }
@@ -70,16 +57,6 @@
       open.href = GOOGLE_FORM_URL;
       alt.hidden = false;
     }
-  }
-
-  function wireResumeButton() {
-    var link = document.getElementById("resume-project");
-    if (!link || !RESUME_PROJECT_URL) return;
-    if (!isHttpsUrl(RESUME_PROJECT_URL)) {
-      console.warn("RESUME_PROJECT_URL was rejected: it must be an https:// link.");
-      return;
-    }
-    link.href = RESUME_PROJECT_URL;
   }
 
   function wireNav() {
@@ -134,7 +111,6 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     mountIntakeForm();
-    wireResumeButton();
     wireNav();
     wireReveal();
     setYear();
