@@ -620,6 +620,13 @@ a { color: inherit; }
   align-content: center;
 }
 .form-fallback p { max-width: 42ch; color: var(--color-text-muted); }
+.form-alt {
+  margin: 0.9rem 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+.form-alt a { color: var(--color-ink); font-weight: 600; }
 [hidden] { display: none !important; }
 
 /* ---------- Footer ---------- */
