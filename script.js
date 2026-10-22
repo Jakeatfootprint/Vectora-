@@ -15,7 +15,7 @@
    *   (client portal, status form, etc.). Leave empty to keep it pointing
    *   at the intake section.
    * ---------------------------------------------------------------- */
-  var GOOGLE_FORM_URL = "";
+  var GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeM2jYyTttmxVGzeU533OvmUYPOI4dtza57rzyWyxT1ebAHEA/viewform";
   var RESUME_PROJECT_URL = "";
 
   function isGoogleFormUrl(value) {
